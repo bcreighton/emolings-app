@@ -7,7 +7,7 @@ class GetStarted extends Component {
             <div id="get-started">
                 <section className="container">
                     <h2 className="headline">Who Are You?</h2>
-                    <UserBtn user='parent/caregiver' />
+                    <UserBtn user='parent-caregiver' />
                     <UserBtn user='child' />
                     <p className="support-copy">You experience will be tailore to your seclection to help guid you down a path that is most effective.</p>
                 </section>

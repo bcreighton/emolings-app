@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class UserBtn extends Component {
     render() {
-        const user_path = this.props.user === 'parent/caregiver' ? '/pc-feeling-selection' : '/c-feeling-selection';
+        const user_path = this.props.user === 'parent-caregiver' ? '/feeling-selection' : 'child-feeling-selection';
 
         return (
             <Link to={user_path}>
