@@ -1,0 +1,5 @@
+.container.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}

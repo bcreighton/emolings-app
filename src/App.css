@@ -1,0 +1,79 @@
+:root {
+    --main-red:#F24949;
+    --main-yellow: #F2D43D;
+    --main-green: #A4BF41;
+    --main-blue: #52AFE6;
+    --main-purple: #535FA6;
+    --main-neutral: rgb(204, 204, 204);
+    --main-default-copy-color: rgb(85, 85, 85);
+    --main-header-bottom-margin: 10px;
+    --main-headline-size: 2rem;
+    --main-section-head-size: 1.75rem;
+    --nav-link-size: 1.25rem;
+    --nav-link-color: #fff;
+    --copy-support-size: 1.25rem;
+    --copy-main-size: 1.15rem;
+    --copy-line-height: 1.75rem;
+    --btn-select-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    display: grid;
+    max-width: 100%;
+    height: 100vh;
+    grid-template-rows: 159px auto 75px;
+    margin: 0;
+}
+
+main {
+    grid-row: 2/3;
+    max-width: 100%;
+}
+
+main div {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.headline {
+    font-size: var(--main-headline-size);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;;
+}
+
+.support-copy, .main-copy {
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: var(--copy-line-height);
+    color: var(--main-default-copy-color);
+}
+
+.support-copy {
+    font-size: var(--copy-support-size);
+}
+
+.main-copy {
+    font-size: var(--copy-main-size);
+}
+
+footer {
+    grid-row: 3/4;
+    margin-bottom: 10px;
+    padding: 10px 5px;
+}
+
+footer.container {
+    margin-top: 0;
+    padding-top: 5px;
+    text-align: center;
+}

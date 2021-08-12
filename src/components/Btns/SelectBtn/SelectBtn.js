@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import './SelectBtn.css';
+import '../Btns.css';
 
 class SelectBtn extends Component {
     generateBtnLink = () => {
@@ -14,10 +16,16 @@ class SelectBtn extends Component {
         }
     }
 
+    generateClass = () => {
+        return ('select-btn ' + this.props.color + '-btn');
+    }
+
     render() {
         return (
-            <Link className='SelectBtn' to={this.generateBtnLink()} >
-                <button>{this.props.feeling || this.props.advFeeling || this.props.severity}</button>
+            <Link className='btn-link' to={this.generateBtnLink()} >
+                <div className={this.generateClass()}>
+                    {this.props.feeling || this.props.advFeeling || this.props.severity}
+                </div>
             </Link>
         )
     }

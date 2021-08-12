@@ -11,10 +11,10 @@ class FeelingSeverity extends Component {
                     <section className="container">
                         <h2 className="headline">How Strong Is This Emotion/Feeling?</h2>
                     </section>
-                    <section className="container">
-                        <SelectBtn severity='low' />
-                        <SelectBtn severity='medium' />
-                        <SelectBtn severity='high' />
+                    <section className="container options">
+                        <SelectBtn severity='low' color='blue' />
+                        <SelectBtn severity='medium' color='yellow' />
+                        <SelectBtn severity='high' color='red' />
                     </section>
                 </div>
             )
@@ -26,10 +26,10 @@ class FeelingSeverity extends Component {
                         <h2 className="headline">How Strong Is This Emotion/Feeling?</h2>
                         <p className="support-copy">Using the options below; identify The severity of the emotion or feeling your child is expressing.</p>
                     </section>
-                    <section className="container">
-                        <SelectBtn severity='low' />
-                        <SelectBtn severity='medium' />
-                        <SelectBtn severity='high' />
+                    <section className="container options">
+                        <SelectBtn severity='low' color='blue' />
+                        <SelectBtn severity='medium' color='yellow' />
+                        <SelectBtn severity='high' color='red' />
                     </section>
                     <section className="container">
                         <h3 className="section-head">Need Help?</h3>

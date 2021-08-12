@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Brand from '../Brand/Brand';
+import './Nav.css';
 
 class Nav extends Component {
     renderNav() {

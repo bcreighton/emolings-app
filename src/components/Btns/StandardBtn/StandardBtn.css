@@ -1,0 +1,9 @@
+a button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: none;
+    background-color: var(--main-blue);
+    color: #fff;
+}

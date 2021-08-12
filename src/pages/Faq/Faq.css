@@ -1,0 +1,21 @@
+.headline {
+    color: var(--main-blue);
+}
+
+#faq-list {
+    font-size: var(--copy-support-size);
+    line-height: var(--copy-line-height);
+    color: var(--main-default-copy-color);
+    list-style-type:decimal;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.faq-subitem {
+    list-style-type:upper-latin;
+    margin-left: 50px;
+    font-weight: 300;
+}

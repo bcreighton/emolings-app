@@ -1,0 +1,9 @@
+.container.user-selection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto auto;
+}
+
+.user-selection .support-copy {
+    margin-top: 20px;
+}

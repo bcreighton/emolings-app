@@ -1,0 +1,14 @@
+#coping .support-copy {
+    text-align: center;
+}
+
+.coping-list {
+    padding: 5px 15px;
+    list-style:decimal inside;
+}
+
+.coping-list li {
+    margin-bottom: 10px;
+    font-size: var(--copy-main-size);
+    line-height: var(--copy-line-height);
+}

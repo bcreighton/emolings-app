@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
+import './Coping.css';
 
 class Coping extends Component {
     render() {

@@ -14,6 +14,7 @@ import SeverityIdentification from './pages/UserPath/SeverityIdentification/Seve
 import Coping from './pages/UserPath/Coping/Coping';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Footer from './components/Footer/Footer';
+import './App.css';
 import './reset.css';
 
 class App extends Component {

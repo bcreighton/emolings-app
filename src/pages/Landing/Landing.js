@@ -12,7 +12,7 @@ class Landing extends Component {
                 <section className="container user-selection">
                     <h2 className="section-head">Who Are You?</h2>
                     <p className="support-copy">Select the option below that best describes the role you play in assisting a child or yourself cope with the current feeling(s).</p>
-                    <UserBtn user='parent-caregiver' />
+                    <UserBtn user='parent/caregiver' />
                     <UserBtn user='child' />
                 </section>
                 <section className="container value-prop">

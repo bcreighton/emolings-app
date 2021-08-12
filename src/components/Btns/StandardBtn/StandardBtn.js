@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './StandardBtn.css';
 
 class StandardBtn extends Component {
     render() {

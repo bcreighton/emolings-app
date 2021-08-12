@@ -1,0 +1,32 @@
+.container.user-selection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto auto;
+}
+
+.section-head {
+    margin-bottom: var(--main-header-bottom-margin);
+    font-size: var(--main-section-head-size);
+    font-weight: bold;
+    text-align: center;
+}
+
+.container .section-head {
+    color: var(--main-purple);
+}
+
+.container.user-selection .section-head {
+    color: var(--main-red);
+}
+
+.container.value-prop .section-head{
+    color: var(--main-blue);
+}
+
+.value-items {
+    list-style: circle inside;
+    font-size: 1.25rem;
+    line-height: var(--copy-line-height);
+    color: var(--main-default-copy-color);
+}
+
