@@ -53,6 +53,7 @@ class FeelingSelection extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         (this.props.location.pathname === '/child-feeling-selection')
             ? this.context.setUserType('child')
             : this.context.setUserType('parent-caregiver')

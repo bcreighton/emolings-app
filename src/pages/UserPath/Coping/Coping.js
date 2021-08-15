@@ -73,6 +73,7 @@ class Coping extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.context.getSeverity(parseInt(this.props.match.params.severityId));
         this.context.getCopingSkills(this.context.current_feeling.id)
     }

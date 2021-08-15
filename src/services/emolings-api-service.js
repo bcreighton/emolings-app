@@ -240,7 +240,6 @@ const EmolingsApiService = {
                     : res.json()
             )
     },
-
 }
 
 export default EmolingsApiService;

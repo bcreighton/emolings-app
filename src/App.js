@@ -33,6 +33,8 @@ class App extends Component {
     feeling_identifiers: [],
     severity_identifiers: [],
     reminders: [],
+    faqs: [],
+    all_coping_skills: [],
     coping_skills: [],
     current_feeling: {},
     current_adv_feeling: {},
@@ -221,12 +223,36 @@ class App extends Component {
     })
   }
 
+  resetAllCopingSkills = () => {
+    return this.setState({
+      all_coping_skills: [],
+      error: null,
+    })
+  }
+
   setCopingSkills = coping_skills => {
     this.resetCopingSkills()
     return this.setState({
       coping_skills,
       error: null,
     })
+  }
+
+  setAllCopingSkills = all_coping_skills => {
+    this.resetAllCopingSkills()
+    return this.setState({
+      all_coping_skills,
+      error: null,
+    })
+  }
+
+  getAllCopingSkills = () => {
+    EmolingsApiService.getAllCopingSkills()
+      .then(this.setAllCopingSkills)
+      .catch(error => this.setState({
+        all_coping_skills: [],
+        error,
+      }))
   }
 
   getCopingSkills = main_feeling_id => {
@@ -312,6 +338,33 @@ class App extends Component {
       }))
   }
 
+  // FAQ Methods
+  resetFaqs = () => {
+    return this.setState({
+      faqs: [],
+      error: null,
+    })
+  }
+
+  setFaqs = faqs => {
+    
+    this.resetFaqs()
+    return this.setState({
+      faqs,
+      error: null,
+    })
+  }
+
+  getFaqs = () => {
+    
+    EmolingsApiService.getFaqs()
+      .then(this.setFaqs)
+      .catch(error => this.setState({
+        faqs: [],
+        error,
+      }))
+  }
+
   // Set Track Location Methods
   
   resetTrackLocation = () => {
@@ -335,7 +388,9 @@ class App extends Component {
     this.getSeverityLevels();
     this.getFeelingIdentifiers();
     this.getSeverityIdentifiers();
+    this.getAllCopingSkills();
     this.getReminders();
+    this.getFaqs();
   }
 
   render() {
@@ -349,6 +404,8 @@ class App extends Component {
       feeling_identifiers: this.state.feeling_identifiers,
       severity_identifiers: this.state.severity_identifiers,
       reminders: this.state.reminders,
+      faqs: this.state.faqs,
+      all_coping_skills: this.state.all_coping_skills,
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
       current_severity: this.state.current_severity,
