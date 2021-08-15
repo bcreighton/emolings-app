@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import EmolingsApiService from './services/emolings-api-service';
 
 // Context and Components
 import EmolingsContext from './context/EmolingContext';
@@ -38,7 +39,38 @@ class App extends Component {
     error: null,
   }
 
+  // User Type Methods
+  resetUserType = () => {
+    return this.setState({
+      user_type: {},
+    })
+  }
+
+  setUserType = user_type => {
+    debugger;
+    this.resetUserType()
+    return this.setState({
+      user_type,
+      error: null,
+    })
+  }
+
+  getUserType = id => {
+    debugger;
+    EmolingsApiService.getUserType(id)
+      .then(this.setUserType)
+      .catch(error => this.setState({
+        user_type: [],
+        error
+      }))
+  }
+
   render() {
+
+    const contextValue = {
+      user_type: this.state.user_type,
+      getUserType: this.getUserType,
+    }
     return (
       <div className='App'>
         <Helmet>
@@ -46,26 +78,28 @@ class App extends Component {
             <title>Emolings</title>
             <meta name='description' content='Modern day child feelings chart with a unique spin on parent/caregiver coping skills.'/>
         </Helmet>
-        <Nav />
-        <main>
-          <Switch>
-            <Route path='/get-started' component={GetStarted} />
-            <Route path='/faq' component={Faq} />
-            <Route path='/coping-skills' component={CopingSkills} />
-            <Route path='/feeling-selection' component={FeelingSelection} />
-            <Route path='/child-feeling-selection' component={FeelingSelection} />
-            <Route path='/feeling-identification' component={FeelingIdentification} />
-            <Route path='/adv-feeling-selection' component={AdvFeelingSelection} />
-            <Route path='/child-feeling-severity' component={FeelingSeverity} />
-            <Route path='/feeling-severity' component={FeelingSeverity} />
-            <Route path='/severity-identification' component={SeverityIdentification} />
-            <Route path='/child-coping' component={Coping} />
-            <Route path='/coping' component={Coping} />
-            <Route path='/' exact component={Landing} />
-            <Route component={PageNotFound} />
-          </Switch>
-        </main>
-        <Footer />
+        <EmolingsContext.Provider value={ contextValue }>
+          <Nav />
+          <main>
+            <Switch>
+              <Route path='/get-started' component={GetStarted} />
+              <Route path='/faq' component={Faq} />
+              <Route path='/coping-skills' component={CopingSkills} />
+              <Route path='/feeling-selection' component={FeelingSelection} />
+              <Route path='/child-feeling-selection' component={FeelingSelection} />
+              <Route path='/feeling-identification' component={FeelingIdentification} />
+              <Route path='/adv-feeling-selection' component={AdvFeelingSelection} />
+              <Route path='/child-feeling-severity' component={FeelingSeverity} />
+              <Route path='/feeling-severity' component={FeelingSeverity} />
+              <Route path='/severity-identification' component={SeverityIdentification} />
+              <Route path='/child-coping' component={Coping} />
+              <Route path='/coping' component={Coping} />
+              <Route path='/' exact component={Landing} />
+              <Route component={PageNotFound} />
+            </Switch>
+          </main>
+          <Footer />
+        </EmolingsContext.Provider>
       </div>
     );
   }
