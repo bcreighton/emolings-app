@@ -5,10 +5,21 @@ import EmolingsContext from '../../../context/EmolingContext';
 class AdvFeelingSelection extends Component {
     static contextType = EmolingsContext;
 
+    generateAdvFeelingList(adv_feelings) {
+        return adv_feelings.map(adv_feeling => (
+            <SelectBtn
+                key={adv_feeling.id}
+                id={adv_feeling.id}
+                advFeeling={adv_feeling.name}
+                color={adv_feeling.color}
+            />
+        ))
+    }
+
     componentDidMount() {
-        debugger;
         window.scrollTo(0, 0);
         this.context.getFeeling(parseInt(this.props.match.params.feelingId))
+        this.context.getAdvFeelings(parseInt(this.props.match.params.feelingId))
     }
     render() {
         return (
@@ -18,12 +29,7 @@ class AdvFeelingSelection extends Component {
                     <p className="support-copy">Using the options below; identify the deeper more advanced emotion/feeling your child is expressing.</p>
                 </section>
                 <section className="container options">
-                    <SelectBtn advFeeling='lonley' color='blue' />
-                    <SelectBtn advFeeling='loved' color='green' />
-                    <SelectBtn advFeeling='nervous' color='blue' />
-                    <SelectBtn advFeeling='hurt' color='red' />
-                    <SelectBtn advFeeling='annoyed' color='purple' />
-                    <SelectBtn advFeeling='skip' color='none' />
+                    {this.generateAdvFeelingList(this.context.adv_feelings)}
                 </section>
             </div>
         )

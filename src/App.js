@@ -112,6 +112,56 @@ class App extends Component {
       }))
   }
 
+  // Advance Feeling Methods
+
+  resetAdvFeelings = () => {
+    return this.setState({
+      adv_feelings: [],
+      error: null,
+    })
+  }
+
+  resetCurrentAdvFeeling = () => {
+    return this.setState({
+      current_adv_feeling: {},
+      error: null,
+    })
+  }
+
+  setAdvFeelings = adv_feelings => {
+    this.resetFeelings()
+    return this.setState({
+      adv_feelings,
+      error: null,
+    })
+  }
+
+  setCurrentAdvFeeling = current_adv_feeling => {
+    this.resetCurrentAdvFeeling()
+    return this.setState({
+      current_adv_feeling,
+      error: null,
+    })
+  }
+
+  getAdvFeelings = main_feeling => {
+    EmolingsApiService.getAdvFeelings(main_feeling)
+      .then(this.setAdvFeelings)
+      .catch(error => this.setState({
+        adv_feelings: {},
+        error,
+      }))
+  }
+
+  getAdvFeeling = id => {
+    EmolingsApiService.getAdvFeeling(id)
+      .then(this.setCurrentAdvFeeling)
+      .catch(error => this.setState({
+        current_adv_feeling: {},
+        error
+      }))
+  }
+
   componentDidMount() {
     this.getFeelings()
   }
@@ -121,8 +171,12 @@ class App extends Component {
     const contextValue = {
       user_type: this.state.user_type,
       feelings: this.state.feelings,
+      adv_feelings: this.state.adv_feelings,
       current_feeling: this.state.current_feeling,
+      current_adv_feeling: this.state.current_adv_feeling,
       getFeeling: this.getFeeling,
+      getAdvFeeling: this.getAdvFeeling,
+      getAdvFeelings: this.getAdvFeelings,
       setUserType: this.setUserType,
     }
     return (
@@ -143,8 +197,8 @@ class App extends Component {
               <Route path='/child-feeling-selection' component={FeelingSelection} />
               <Route path='/feeling-identification' component={FeelingIdentification} />
               <Route path='/adv-feeling-selection/:feelingId' component={AdvFeelingSelection} />
-              <Route path='/child-feeling-severity' component={FeelingSeverity} />
-              <Route path='/feeling-severity' component={FeelingSeverity} />
+              <Route path='/child-feeling-severity/:feelingId' component={FeelingSeverity} />
+              <Route path='/feeling-severity/:advFeelingId' component={FeelingSeverity} />
               <Route path='/severity-identification' component={SeverityIdentification} />
               <Route path='/child-coping' component={Coping} />
               <Route path='/coping' component={Coping} />

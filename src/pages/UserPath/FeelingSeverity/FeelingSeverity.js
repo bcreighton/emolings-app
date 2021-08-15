@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import SelectBtn from '../../../components/Btns/SelectBtn/SelectBtn';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
+import EmolingsContext from '../../../context/EmolingContext';
 
 class FeelingSeverity extends Component {
+    static contextType = EmolingsContext;
+
     generateSeverityPage = () => {
         if(this.props.location.pathname === '/child-feeling-severity') {
             return (
@@ -39,6 +42,10 @@ class FeelingSeverity extends Component {
                 </div>
             )
         }
+    }
+
+    componentDidMount() {
+        this.context.getAdvFeeling(parseInt(this.props.match.params.advFeelingId))
     }
 
     render() {

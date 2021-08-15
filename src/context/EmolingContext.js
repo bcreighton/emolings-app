@@ -11,7 +11,6 @@ const EmolingsContext = React.createContext({
     current_feeling: {},
     current_adv_feeling: {},
     current_severity: {},
-    getUserType: () => {},
     getFeelings: () => {},
     getAdvFeelings: () => {},
     getFeelingIdentifiers: () => {},
