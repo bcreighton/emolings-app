@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   setUserType = user_type => {
-    debugger;
     this.resetUserType()
     return this.setState({
       user_type,
@@ -56,7 +55,6 @@ class App extends Component {
   }
 
   getUserType = id => {
-    debugger;
     EmolingsApiService.getUserType(id)
       .then(this.setUserType)
       .catch(error => this.setState({
@@ -65,11 +63,68 @@ class App extends Component {
       }))
   }
 
+  // Feeling Methods
+  resetFeelings = () => {
+    return this.setState({
+      feelings: [],
+      error: null,
+    })
+  }
+
+  resetCurrentFeeling = () => {
+    return this.setState({
+      current_feeling: {},
+      error: null,
+    })
+  }
+
+  setFeelings = feelings => {
+    this.resetFeelings()
+    return this.setState({
+      feelings,
+      error: null,
+    })
+  }
+
+  setCurrentFeeling = current_feeling => {
+    debugger;
+    this.resetCurrentFeeling()
+    return this.setState({
+      current_feeling,
+      error: null,
+    })
+  }
+
+  getFeelings = () => {
+    EmolingsApiService.getFeelings()
+      .then(this.setFeelings)
+      .catch(error => this.setState({
+        feelings: {},
+        error,
+      }))
+  }
+
+  getFeeling = id => {
+    debugger;
+    EmolingsApiService.getFeeling(id)
+      .then(this.setCurrentFeeling)
+      .catch(error => this.setState({
+        current_feeling: {},
+        error
+      }))
+  }
+
+  componentDidMount() {
+    this.getFeelings()
+  }
+
   render() {
 
     const contextValue = {
       user_type: this.state.user_type,
+      feelings: this.state.feelings,
       getUserType: this.getUserType,
+      getFeeling: this.getFeeling,
     }
     return (
       <div className='App'>
@@ -86,6 +141,7 @@ class App extends Component {
               <Route path='/faq' component={Faq} />
               <Route path='/coping-skills' component={CopingSkills} />
               <Route path='/feeling-selection' component={FeelingSelection} />
+              <Route path='/feeling-selection/:feelingId' component={FeelingSelection} />
               <Route path='/child-feeling-selection' component={FeelingSelection} />
               <Route path='/feeling-identification' component={FeelingIdentification} />
               <Route path='/adv-feeling-selection' component={AdvFeelingSelection} />
