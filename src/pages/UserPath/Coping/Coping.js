@@ -22,6 +22,14 @@ class Coping extends Component {
         ))
     }
 
+    generateRemindersList(reminders) {
+        return reminders.map(reminder => (
+            <li key={reminder.id} className='coping-item'>
+                {reminder.reminder}
+            </li>
+        ))
+    }
+
     generateCopingPage = () => {
         if (this.props.location.pathname.includes('/child-coping')) {
             return (
@@ -54,11 +62,7 @@ class Coping extends Component {
                         <h3 className="section-head">Little To No Progress?</h3>
                         <p className="support-copy">Sometimes an emotion/feeling is hightened so much it requires some techniques that may be necessary.</p>
                         <ul className="coping-list">
-                            <li className="coping-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente beatae incidunt tempora?</li>
-                            <li className="coping-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente beatae incidunt tempora?</li>
-                            <li className="coping-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente beatae incidunt tempora?</li>
-                            <li className="coping-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente beatae incidunt tempora?</li>
-                            <li className="coping-item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores sapiente beatae incidunt tempora?</li>
+                            {this.generateRemindersList(this.context.reminders)}
                         </ul>
                     </section>
                     <StandardBtn link='/get-started' text='Start Over' />

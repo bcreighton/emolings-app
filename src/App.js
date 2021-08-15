@@ -287,7 +287,32 @@ class App extends Component {
       }))
   }
 
-  // Set location
+  // Reminder Methods
+  resetReminders = () => {
+    return this.setState({
+      reminders: [],
+      error: null,
+    })
+  }
+
+  setReminders = reminders => {
+    this.resetReminders()
+    return this.setState({
+      reminders,
+      error: null,
+    })
+  }
+
+  getReminders = () => {
+    EmolingsApiService.getReminders()
+      .then(this.setReminders)
+      .catch(error => this.setState({
+        reminders: [],
+        error,
+      }))
+  }
+
+  // Set Track Location Methods
   
   resetTrackLocation = () => {
     return this.setState({
@@ -310,6 +335,7 @@ class App extends Component {
     this.getSeverityLevels();
     this.getFeelingIdentifiers();
     this.getSeverityIdentifiers();
+    this.getReminders();
   }
 
   render() {
@@ -322,6 +348,7 @@ class App extends Component {
       coping_skills: this.state.coping_skills,
       feeling_identifiers: this.state.feeling_identifiers,
       severity_identifiers: this.state.severity_identifiers,
+      reminders: this.state.reminders,
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
       current_severity: this.state.current_severity,
