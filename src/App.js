@@ -1,6 +1,10 @@
+// Essentials
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+
+// Context and Components
+import EmolingsContext from './context/EmolingContext';
 import Nav from './components/Nav/Nav';
 import Landing from './pages/Landing/Landing';
 import GetStarted from './pages/GetStarted/GetStarted';
@@ -14,10 +18,26 @@ import SeverityIdentification from './pages/UserPath/SeverityIdentification/Seve
 import Coping from './pages/UserPath/Coping/Coping';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Footer from './components/Footer/Footer';
+
+// Stylesheets
 import './App.css';
 import './reset.css';
 
 class App extends Component {
+  state = {
+    user_type: {},
+    feelings: [],
+    adv_feelings: [],
+    severity_levels: [],
+    feeling_identifiers: [],
+    severity_identifiers: [],
+    reminders: [],
+    current_feeling: {},
+    current_adv_feeling: {},
+    current_severity: {},
+    error: null,
+  }
+
   render() {
     return (
       <div className='App'>
