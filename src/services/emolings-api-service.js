@@ -166,6 +166,51 @@ const EmolingsApiService = {
             )
     },
 
+    getAllIdentifiers() {
+        return fetch(`${config.API_ENDPOINT}/identifier}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getIdentifiers(type) {
+        return fetch(`${config.API_ENDPOINT}/identifier/type/${type}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getIdentifier(id) {
+        return fetch(`${config.API_ENDPOINT}/identifier/${id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
 }
 
 export default EmolingsApiService;

@@ -237,10 +237,60 @@ class App extends Component {
       }))
   }
 
+  // Identifier Methods
+  resetFeelingIdentifiers = () => {
+    return this.setState({
+      feeling_identifiers: [],
+      error: null,
+    })
+  }
+
+  resetSeverityIdentifiers = () => {
+    return this.setState({
+      severity_identifiers: [],
+      error: null,
+    })
+  }
+
+  setFeelingIdentifiers = feeling_identifiers => {
+    this.resetFeelingIdentifiers()
+    return this.setState({
+      feeling_identifiers,
+      error: null,
+    })
+  }
+
+  setSeverityIdentifiers = severity_identifiers => {
+    this.resetSeverityIdentifiers()
+    return this.setState({
+      severity_identifiers,
+      error: null,
+    })
+  }
+
+  getFeelingIdentifiers = () => {
+    EmolingsApiService.getIdentifiers('Feeling')
+      .then(this.setFeelingIdentifiers)
+      .catch(error => this.setState({
+        feeling_identifiers: [],
+        error,
+      }))
+  }
+
+  getSeverityIdentifiers = () => {
+    EmolingsApiService.getIdentifiers('Severity')
+      .then(this.setSeverityIdentifiers)
+      .catch(error => this.setState({
+        severity_identifiers: [],
+        error,
+      }))
+  }
+
 
   componentDidMount() {
     this.getFeelings();
     this.getSeverityLevels();
+    this.getFeelingIdentifiers();
   }
 
   render() {
@@ -251,6 +301,8 @@ class App extends Component {
       adv_feelings: this.state.adv_feelings,
       severity_levels: this.state.severity_levels,
       coping_skills: this.state.coping_skills,
+      feeling_identifiers: this.state.feeling_identifiers,
+      severity_identifiers: this.state.severity_identifiers,
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
       current_severity: this.state.current_severity,
@@ -261,6 +313,7 @@ class App extends Component {
       getCopingSkills: this.getCopingSkills,
       setUserType: this.setUserType,
     }
+
     return (
       <div className='App'>
         <Helmet>
