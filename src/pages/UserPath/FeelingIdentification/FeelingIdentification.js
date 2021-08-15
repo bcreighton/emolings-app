@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
+import EmolingsContext from '../../../context/EmolingContext';
 import '../UserPath.css';
 
 class FeelingIdentification extends Component {
+    static contextType = EmolingsContext;
+
+    generateFeelingIdentifiersList(feeling_identifiers) {
+        return feeling_identifiers.map(feeling_identifier => (
+            <li key={feeling_identifier.id} className='identification-item main-copy'>
+                {feeling_identifier.identifier}
+            </li>
+        ))
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <div id="feeling-identification">
@@ -12,11 +27,7 @@ class FeelingIdentification extends Component {
                 </section>
                 <section className="container">
                     <ul className="identification-list">
-                        <li className="identification-item main-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam qui nobis quis. Sint, eum?</li>
-                        <li className="identification-item main-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam qui nobis quis. Sint, eum?</li>
-                        <li className="identification-item main-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam qui nobis quis. Sint, eum?</li>
-                        <li className="identification-item main-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam qui nobis quis. Sint, eum?</li>
-                        <li className="identification-item main-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quibusdam qui nobis quis. Sint, eum?</li>
+                        {this.generateFeelingIdentifiersList(this.context.feeling_identifiers)}
                     </ul>
                 </section>
                 <section className="container">

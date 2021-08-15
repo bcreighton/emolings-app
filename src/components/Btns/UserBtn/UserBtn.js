@@ -9,7 +9,7 @@ class UserBtn extends Component {
 
         return (
             <Link to={user_path} className='btn-link'>
-                <div className="user-btn">
+                <div className="user-btn" >
                     {this.props.user}
                 </div>
             </Link>
