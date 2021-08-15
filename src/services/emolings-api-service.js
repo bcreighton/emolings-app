@@ -121,6 +121,51 @@ const EmolingsApiService = {
             )
     },
 
+    getAllCopingSkills() {
+        return fetch(`${config.API_ENDPOINT}/coping-skill`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getCopingSkills(main_feeling) {
+        return fetch(`${config.API_ENDPOINT}/coping-skill/feeling/${main_feeling}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getCopingSkill(id) {
+        return fetch(`${config.API_ENDPOINT}/coping-skill/${id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${config.API_KEY}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
 }
 
 export default EmolingsApiService;

@@ -8,6 +8,7 @@ const EmolingsContext = React.createContext({
     feeling_identifiers: [],
     severity_identifiers: [],
     reminders: [],
+    coping_skills: [],
     current_feeling: {},
     current_adv_feeling: {},
     current_severity: {},

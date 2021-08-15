@@ -33,6 +33,7 @@ class App extends Component {
     feeling_identifiers: [],
     severity_identifiers: [],
     reminders: [],
+    coping_skills: [],
     current_feeling: {},
     current_adv_feeling: {},
     current_severity: {},
@@ -144,8 +145,8 @@ class App extends Component {
     })
   }
 
-  getAdvFeelings = main_feeling => {
-    EmolingsApiService.getAdvFeelings(main_feeling)
+  getAdvFeelings = main_feeling_id => {
+    EmolingsApiService.getAdvFeelings(main_feeling_id)
       .then(this.setAdvFeelings)
       .catch(error => this.setState({
         adv_feelings: {},
@@ -211,6 +212,31 @@ class App extends Component {
       }))
   }
 
+  // Coping Skill Methods
+  resetCopingSkills = () => {
+    return this.setState({
+      coping_skills: [],
+      error: null,
+    })
+  }
+
+  setCopingSkills = coping_skills => {
+    this.resetCopingSkills()
+    return this.setState({
+      coping_skills,
+      error: null,
+    })
+  }
+
+  getCopingSkills = main_feeling_id => {
+    EmolingsApiService.getCopingSkills(main_feeling_id)
+      .then(this.setCopingSkills)
+      .catch(error => this.setState({
+        coping_skills: [],
+        error,
+      }))
+  }
+
 
   componentDidMount() {
     this.getFeelings();
@@ -224,6 +250,7 @@ class App extends Component {
       feelings: this.state.feelings,
       adv_feelings: this.state.adv_feelings,
       severity_levels: this.state.severity_levels,
+      coping_skills: this.state.coping_skills,
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
       current_severity: this.state.current_severity,
@@ -231,6 +258,7 @@ class App extends Component {
       getAdvFeeling: this.getAdvFeeling,
       getAdvFeelings: this.getAdvFeelings,
       getSeverity: this.getSeverity,
+      getCopingSkills: this.getCopingSkills,
       setUserType: this.setUserType,
     }
     return (

@@ -8,7 +8,14 @@ class SelectBtn extends Component {
     static contextType = EmolingsContext;
 
     generateBtnLink = () => {
-        if(this.props.severity) return '/coping';
+        if(this.props.severity) {
+            if (this.props.location.pathname.includes('/child-feeling-severity')) {
+                return '/child-coping'
+            } else { 
+                return '/coping'
+            }
+        };
+
         if(this.props.advFeeling) return '/feeling-severity';
         
         if(this.props.location.pathname === '/child-feeling-selection') {

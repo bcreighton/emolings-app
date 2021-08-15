@@ -19,7 +19,7 @@ class FeelingSeverity extends Component {
     }
 
     generateSeverityPage = () => {
-        if(this.props.location.pathname === '/child-feeling-severity') {
+        if(this.props.location.pathname.includes('/child-feeling-severity')) {
             return (
                 <div id="feeling-severity">
                     <section className="container">
