@@ -87,7 +87,6 @@ class App extends Component {
   }
 
   setCurrentFeeling = current_feeling => {
-    debugger;
     this.resetCurrentFeeling()
     return this.setState({
       current_feeling,
@@ -105,7 +104,6 @@ class App extends Component {
   }
 
   getFeeling = id => {
-    debugger;
     EmolingsApiService.getFeeling(id)
       .then(this.setCurrentFeeling)
       .catch(error => this.setState({
@@ -123,6 +121,7 @@ class App extends Component {
     const contextValue = {
       user_type: this.state.user_type,
       feelings: this.state.feelings,
+      current_feeling: this.state.current_feeling,
       getFeeling: this.getFeeling,
       setUserType: this.setUserType,
     }
@@ -141,10 +140,9 @@ class App extends Component {
               <Route path='/faq' component={Faq} />
               <Route path='/coping-skills' component={CopingSkills} />
               <Route path='/feeling-selection' component={FeelingSelection} />
-              <Route path='/feeling-selection/:feelingId' component={FeelingSelection} />
               <Route path='/child-feeling-selection' component={FeelingSelection} />
               <Route path='/feeling-identification' component={FeelingIdentification} />
-              <Route path='/adv-feeling-selection' component={AdvFeelingSelection} />
+              <Route path='/adv-feeling-selection/:feelingId' component={AdvFeelingSelection} />
               <Route path='/child-feeling-severity' component={FeelingSeverity} />
               <Route path='/feeling-severity' component={FeelingSeverity} />
               <Route path='/severity-identification' component={SeverityIdentification} />

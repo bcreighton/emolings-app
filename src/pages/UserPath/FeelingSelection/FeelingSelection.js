@@ -14,7 +14,7 @@ class FeelingSelection extends Component {
                 key={feeling.id}
                 id={feeling.id}
                 feeling={feeling.name}
-                color='red'
+                color={feeling.color}
             />
         ))
     }
@@ -51,6 +51,13 @@ class FeelingSelection extends Component {
             )
         }
     }
+
+    componentDidMount() {
+        (this.props.location.pathname === '/child-feeling-selection')
+            ? this.context.setUserType('child')
+            : this.context.setUserType('parent-caregiver')
+    }
+    
     render() {
         return (
             <>

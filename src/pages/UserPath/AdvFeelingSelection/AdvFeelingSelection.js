@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import SelectBtn from '../../../components/Btns/SelectBtn/SelectBtn';
+import EmolingsContext from '../../../context/EmolingContext';
 
 class AdvFeelingSelection extends Component {
+    static contextType = EmolingsContext;
+
+    componentDidMount() {
+        debugger;
+        window.scrollTo(0, 0);
+        this.context.getFeeling(parseInt(this.props.match.params.feelingId))
+    }
     render() {
         return (
             <div id="adv-feeling-selection">

@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './SelectBtn.css';
 import '../Btns.css';
+import EmolingsContext from '../../../context/EmolingContext';
 
 class SelectBtn extends Component {
+    static contextType = EmolingsContext;
+
     generateBtnLink = () => {
         if(this.props.severity) return '/coping';
         if(this.props.advFeeling) return '/feeling-severity';
@@ -22,8 +25,10 @@ class SelectBtn extends Component {
 
     render() {
         return (
-            <Link className='btn-link' to={this.generateBtnLink()} >
-                <div className={this.generateClass()}>
+            <Link className='btn-link' to={`${this.generateBtnLink()}/${this.props.id}`} >
+                <div 
+                    className={this.generateClass()} 
+                >
                     {this.props.feeling || this.props.advFeeling || this.props.severity}
                 </div>
             </Link>

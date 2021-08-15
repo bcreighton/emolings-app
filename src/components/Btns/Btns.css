@@ -23,20 +23,72 @@
     background-color: var(--main-red);
 }
 
+.light-red-btn {
+    background-color: var(--main-light-red);
+}
+
+.dark-red-btn {
+    background-color: var(--main-dark-red);
+}
+
 .blue-btn {
     background-color: var(--main-blue);
+}
+
+.light-blue-btn {
+    background-color: var(--main-light-blue);
+}
+
+.dark-blue-btn {
+    background-color: var(--main-dark-blue);
 }
 
 .green-btn {
     background-color: var(--main-green);
 }
 
+.light-green-btn {
+    background-color: var(--main-light-green);
+}
+
+.dark-green-btn {
+    background-color: var(--main-dark-green);
+}
+
 .yellow-btn {
     background-color: var(--main-yellow);
 }
 
+.light-yellow-btn {
+    background-color: var(--main-light-yellow);
+}
+
+.dark-yellow-btn {
+    background-color: var(--main-dark-yellow);
+}
+
 .purple-btn {
     background-color: var(--main-purple);
+}
+
+.light-purple-btn {
+    background-color: var(--main-light-purple);
+}
+
+.dark-purple-btn {
+    background-color: var(--main-dark-purple);
+}
+
+.orange-btn {
+    background-color: var(--main-orange);
+}
+
+.light-orange-btn {
+    background-color: var(--main-light-orange);
+}
+
+.dark-orange-btn {
+    background-color: var(--main-dark-orange);
 }
 
 .none-btn {
