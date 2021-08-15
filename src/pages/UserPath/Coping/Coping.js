@@ -8,7 +8,7 @@ class Coping extends Component {
 
     generateChildCopingSkillsList(coping_skills) {
         return coping_skills.map(coping_skill => (
-            <li className='coping-item'>
+            <li key={coping_skill.id} className='coping-item'>
                 {coping_skill.child}
             </li>
         ))
@@ -16,7 +16,7 @@ class Coping extends Component {
 
     generateParentCopingSkillsList(coping_skills) {
         return coping_skills.map(coping_skill => (
-            <li className='coping-item'>
+            <li key={coping_skill.id} className='coping-item'>
                 {coping_skill.parent}
             </li>
         ))

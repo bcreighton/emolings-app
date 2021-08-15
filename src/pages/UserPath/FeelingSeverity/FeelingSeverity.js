@@ -52,6 +52,7 @@ class FeelingSeverity extends Component {
     }
 
     componentDidMount() {
+        this.context.setTrackLocation(this.props.location.pathname);
         (!this.props.location.pathname.includes('/child-feeling-severity'))
             && this.context.getAdvFeeling(parseInt(this.props.match.params.advFeelingId))
     }

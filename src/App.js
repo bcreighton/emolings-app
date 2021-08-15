@@ -37,6 +37,7 @@ class App extends Component {
     current_feeling: {},
     current_adv_feeling: {},
     current_severity: {},
+    track_location: '',
     error: null,
   }
 
@@ -286,11 +287,29 @@ class App extends Component {
       }))
   }
 
+  // Set location
+  
+  resetTrackLocation = () => {
+    return this.setState({
+      track_location: '',
+      error: null,
+    })
+  }
+
+  setTrackLocation = track_location => {
+    this.resetTrackLocation()
+    return this.setState({
+      track_location,
+      error: null,
+    })
+  }
+
 
   componentDidMount() {
     this.getFeelings();
     this.getSeverityLevels();
     this.getFeelingIdentifiers();
+    this.getSeverityIdentifiers();
   }
 
   render() {
@@ -306,12 +325,14 @@ class App extends Component {
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
       current_severity: this.state.current_severity,
+      track_location: this.state.track_location,
       getFeeling: this.getFeeling,
       getAdvFeeling: this.getAdvFeeling,
       getAdvFeelings: this.getAdvFeelings,
       getSeverity: this.getSeverity,
       getCopingSkills: this.getCopingSkills,
       setUserType: this.setUserType,
+      setTrackLocation: this.setTrackLocation,
     }
 
     return (

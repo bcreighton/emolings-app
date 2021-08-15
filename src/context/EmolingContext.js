@@ -9,13 +9,17 @@ const EmolingsContext = React.createContext({
     severity_identifiers: [],
     reminders: [],
     coping_skills: [],
+    faqs: [],
+    track_location: '',
     current_feeling: {},
     current_adv_feeling: {},
     current_severity: {},
     getFeelings: () => {},
     getAdvFeelings: () => {},
     getCopingSkills: () => {},
-    getReminders: () => {}
+    getReminders: () => {},
+    setUserType: () => {},
+    setTrackLocation: () => {}
 })
 
 export default EmolingsContext;

@@ -8,7 +8,7 @@ class FeelingIdentification extends Component {
 
     generateFeelingIdentifiersList(feeling_identifiers) {
         return feeling_identifiers.map(feeling_identifier => (
-            <li className='identification-item main-copy'>
+            <li key={feeling_identifier.id} className='identification-item main-copy'>
                 {feeling_identifier.identifier}
             </li>
         ))
