@@ -123,8 +123,8 @@ class App extends Component {
     const contextValue = {
       user_type: this.state.user_type,
       feelings: this.state.feelings,
-      getUserType: this.getUserType,
       getFeeling: this.getFeeling,
+      setUserType: this.setUserType,
     }
     return (
       <div className='App'>
