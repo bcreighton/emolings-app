@@ -98,7 +98,7 @@ class App extends Component {
     EmolingsApiService.getFeelings()
       .then(this.setFeelings)
       .catch(error => this.setState({
-        feelings: {},
+        feelings: [],
         error,
       }))
   }
@@ -129,7 +129,7 @@ class App extends Component {
   }
 
   setAdvFeelings = adv_feelings => {
-    this.resetFeelings()
+    this.resetAdvFeelings()
     return this.setState({
       adv_feelings,
       error: null,
@@ -162,8 +162,59 @@ class App extends Component {
       }))
   }
 
+  // Severity Methods
+  resetSeverityLevels = () => {
+    return this.setState({
+      severity_levels: [],
+      error: null,
+    })
+  }
+
+  resetCurrentSeverity = () => {
+    return this.setState({
+      current_severity: {},
+      error: null,
+    })
+  }
+
+  setSeverityLevels = severity_levels => {
+    this.resetSeverityLevels()
+    return this.setState({
+      severity_levels,
+      error: null,
+    })
+  }
+
+  setCurrentSeverity = current_severity => {
+    this.resetCurrentSeverity()
+    return this.setState({
+      current_severity,
+      error: null,
+    })
+  }
+
+  getSeverityLevels = () => {
+    EmolingsApiService.getSeverityLevels()
+      .then(this.setSeverityLevels)
+      .catch(error => this.setState({
+        severity_levels: [],
+        error,
+      }))
+  }
+
+  getSeverity = id => {
+    EmolingsApiService.getSeverity(id)
+      .then(this.setCurrentSeverity)
+      .catch(error => this.setState({
+        current_severity: {},
+        error
+      }))
+  }
+
+
   componentDidMount() {
-    this.getFeelings()
+    this.getFeelings();
+    this.getSeverityLevels();
   }
 
   render() {
@@ -172,11 +223,14 @@ class App extends Component {
       user_type: this.state.user_type,
       feelings: this.state.feelings,
       adv_feelings: this.state.adv_feelings,
+      severity_levels: this.state.severity_levels,
       current_feeling: this.state.current_feeling,
       current_adv_feeling: this.state.current_adv_feeling,
+      current_severity: this.state.current_severity,
       getFeeling: this.getFeeling,
       getAdvFeeling: this.getAdvFeeling,
       getAdvFeelings: this.getAdvFeelings,
+      getSeverity: this.getSeverity,
       setUserType: this.setUserType,
     }
     return (
@@ -200,8 +254,8 @@ class App extends Component {
               <Route path='/child-feeling-severity/:feelingId' component={FeelingSeverity} />
               <Route path='/feeling-severity/:advFeelingId' component={FeelingSeverity} />
               <Route path='/severity-identification' component={SeverityIdentification} />
-              <Route path='/child-coping' component={Coping} />
-              <Route path='/coping' component={Coping} />
+              <Route path='/child-coping/:severityId' component={Coping} />
+              <Route path='/coping/:severityId' component={Coping} />
               <Route path='/' exact component={Landing} />
               <Route component={PageNotFound} />
             </Switch>

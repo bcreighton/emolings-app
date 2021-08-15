@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
+import EmolingsContext from '../../../context/EmolingContext';
 import './Coping.css';
 
 class Coping extends Component {
+    static contextType = EmolingsContext;
+
+    componentDidMount() {
+        this.context.getSeverity(parseInt(this.props.match.params.severityId))
+    }
+    
     render() {
         return (
             <div id="coping">

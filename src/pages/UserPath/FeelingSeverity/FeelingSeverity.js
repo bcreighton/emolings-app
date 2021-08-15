@@ -7,6 +7,17 @@ import EmolingsContext from '../../../context/EmolingContext';
 class FeelingSeverity extends Component {
     static contextType = EmolingsContext;
 
+    generateSeverityList(severity_levels) {
+        return severity_levels.map(severity => (
+            <SelectBtn
+                key={severity.id}
+                id={severity.id}
+                severity={severity.level}
+                color={severity.color}
+            />
+        ))
+    }
+
     generateSeverityPage = () => {
         if(this.props.location.pathname === '/child-feeling-severity') {
             return (
@@ -15,9 +26,7 @@ class FeelingSeverity extends Component {
                         <h2 className="headline">How Strong Is This Emotion/Feeling?</h2>
                     </section>
                     <section className="container options">
-                        <SelectBtn severity='low' color='blue' />
-                        <SelectBtn severity='medium' color='yellow' />
-                        <SelectBtn severity='high' color='red' />
+                        {this.generateSeverityList(this.context.severity_levels)}
                     </section>
                 </div>
             )
@@ -30,9 +39,7 @@ class FeelingSeverity extends Component {
                         <p className="support-copy">Using the options below; identify The severity of the emotion or feeling your child is expressing.</p>
                     </section>
                     <section className="container options">
-                        <SelectBtn severity='low' color='blue' />
-                        <SelectBtn severity='medium' color='yellow' />
-                        <SelectBtn severity='high' color='red' />
+                        {this.generateSeverityList(this.context.severity_levels)}
                     </section>
                     <section className="container">
                         <h3 className="section-head">Need Help?</h3>
@@ -45,7 +52,8 @@ class FeelingSeverity extends Component {
     }
 
     componentDidMount() {
-        this.context.getAdvFeeling(parseInt(this.props.match.params.advFeelingId))
+        (!this.props.location.pathname.includes('/child-feeling-severity'))
+            && this.context.getAdvFeeling(parseInt(this.props.match.params.advFeelingId))
     }
 
     render() {
