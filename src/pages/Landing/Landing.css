@@ -1,9 +1,3 @@
-.container.user-selection {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto auto auto;
-}
-
 .section-head {
     margin-bottom: var(--main-header-bottom-margin);
     font-size: var(--main-section-head-size);
@@ -25,8 +19,21 @@
 
 .value-items {
     list-style: circle inside;
+    margin-top: 30px;
+    padding-left: 30px;
     font-size: 1.25rem;
     line-height: var(--copy-line-height);
     color: var(--main-default-copy-color);
 }
 
+.value-items li {
+    margin-bottom: 20px;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
+
+.letter .main-copy {
+    margin-bottom: 20px;
+    line-height: 2.25rem;
+    font-style: oblique;
+}
