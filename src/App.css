@@ -103,10 +103,8 @@ main div {
     grid-auto-rows: auto;
 }
 
-#adv-feeling-selection .container.options, #feeling-severity .container.options {
-    display: grid;
+#feeling-severity .container.options {
     grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-auto-rows: auto;
 }
 
 .user-selection h2 {
@@ -135,12 +133,16 @@ footer.container {
 /* Responsive Mobile Styling */
 
 @media screen and (min-width: 480px) {
-
+    
 }
 
 @media screen and (min-width: 675px) {
     #feeling-selection .support-copy, #adv-feeling-selection .support-copy, #feeling-severity .support-copy, #coping .support-copy {
         padding: 0 10%;
+    }
+
+    #adv-feeling-selection .container.options {
+        grid-template-columns: 33.33% 33.33% 33.33%;
     }
 }
 
