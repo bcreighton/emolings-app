@@ -13,7 +13,7 @@ class GetStarted extends Component {
             <div id="get-started">
                 <section className="container user-selection">
                     <h2 className="headline">Who Are You?</h2>
-                    <p className="support-copy">Your experience will be tailore to your seclection to help guid you down a path that is most effective.</p>
+                    <p className="support-copy">Your experience will be tailored to your seclection to help guid you down a path that is most effective.</p>
                     <UserBtn user='parent/caregiver' />
                     <UserBtn user='child' />
                 </section>

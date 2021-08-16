@@ -5,7 +5,7 @@ import './StandardBtn.css';
 class StandardBtn extends Component {
     render() {
         return (
-            <Link to={this.props.link}><button>{this.props.text}</button></Link>
+            <Link className='standardBtn' to={this.props.link}><button>{this.props.text}</button></Link>
         )
     }
 }

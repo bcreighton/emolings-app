@@ -1,4 +1,9 @@
-a button {
+.standardBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+.standardBtn button {
     width: 100%;
     padding: 12px;
     font-size: 1.25rem;
@@ -6,4 +11,38 @@ a button {
     border: none;
     background-color: var(--main-blue);
     color: #fff;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 675px) {
+    .standardBtn {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+    .standardBtn {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1225px) {
+
+}
+
+@media screen and (min-width: 1360px) {
+
+}
+
+@media screen and (min-width: 1500px) {
+
 }

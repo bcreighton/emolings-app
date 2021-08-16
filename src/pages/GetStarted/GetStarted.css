@@ -1,0 +1,35 @@
+#get-started .user-selection .support-copy {
+    margin-bottom: 30px;
+}
+
+/* Responsive Mobile Styling */
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 675px) {
+
+}
+
+@media screen and (min-width: 750px) {
+    #get-started .user-selection .support-copy {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (min-width: 1015px) {
+
+}
+
+@media screen and (min-width: 1225px) {
+
+}
+
+@media screen and (min-width: 1360px) {
+
+}
+
+@media screen and (min-width: 1500px) {
+
+}

@@ -91,6 +91,12 @@ main div {
     font-weight: 700;
 }
 
+.container.options {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: auto;
+}
+
 .container.user-selection {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -127,7 +133,9 @@ footer.container {
 }
 
 @media screen and (min-width: 675px) {
-    
+    #feeling-selection .support-copy {
+        padding: 0 10%;
+    }
 }
 
 @media screen and (min-width: 750px) {
@@ -137,6 +145,10 @@ footer.container {
 @media screen and (min-width: 1015px) {
     .container {
         padding: 20px 15%;
+    }
+
+    #feeling-selection .support-copy {
+        padding: 0 15%;
     }
 }
 
