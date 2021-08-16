@@ -133,7 +133,7 @@ footer.container {
 }
 
 @media screen and (min-width: 675px) {
-    #feeling-selection .support-copy {
+    #feeling-selection .support-copy, #adv-feeling-selection .support-copy, #feeling-severity .support-copy {
         padding: 0 10%;
     }
 }
@@ -147,7 +147,7 @@ footer.container {
         padding: 20px 15%;
     }
 
-    #feeling-selection .support-copy {
+    #feeling-selection .support-copy, #adv-feeling-selection .support-copy, #feeling-severity .support-copy {
         padding: 0 15%;
     }
 }
