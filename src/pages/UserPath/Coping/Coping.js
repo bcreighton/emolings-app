@@ -36,14 +36,14 @@ class Coping extends Component {
                 <div id="coping">
                     <section className="container">
                         <h2 className="headline">Coping Suggestions</h2>
-                        <p className="support-copy">Use the questions and tips below to open the lines of communication with your child in effor tto allow them to cope with their emotion/feeling or guide them to allow you to understand what they need. If they are not speaking; look for none verbial indicators.</p>
+                        <p className="support-copy">Use the questions and tips below to open the lines of communication with your child in effort to allow them to cope with their emotion/feeling or guide them to allow you to understand what they need. If they are not speaking; look for none verbial indicators.</p>
                     </section>
                     <section className="container">
                         <ul className="coping-list">
                         {this.generateChildCopingSkillsList(this.context.coping_skills)}
                         </ul>
+                        <StandardBtn link='/get-started' text='Start Over' />
                     </section>
-                    <StandardBtn link='/get-started' text='Start Over' />
                 </div>
             )
         } else {
@@ -64,8 +64,8 @@ class Coping extends Component {
                         <ul className="coping-list">
                             {this.generateRemindersList(this.context.reminders)}
                         </ul>
+                        <StandardBtn link='/get-started' text='Start Over' />
                     </section>
-                    <StandardBtn link='/get-started' text='Start Over' />
                 </div>
             )
         }
