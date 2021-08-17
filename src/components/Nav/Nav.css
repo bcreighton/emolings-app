@@ -22,8 +22,11 @@ nav {
     margin: 0 10px;
 }
 
-nav .navItem a {
+nav a {
     text-decoration: none;
+}
+
+nav .navItem a {
     font-size: var(--nav-link-size);
     font-weight: bold;
     color: var(--nav-link-color);

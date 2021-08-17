@@ -40,6 +40,17 @@ class Nav extends Component {
             </nav>
             )
         }
+        
+        if(this.props.location.pathname.includes('/child')) {
+            return (
+                <nav>
+                <Brand />
+                <ul id="nav-items">
+                    <li className="navItem"><Link to='/get-started'>Start Over</Link></li>
+                </ul>
+            </nav>
+            )
+        }
         else {
             return (
                 <nav>

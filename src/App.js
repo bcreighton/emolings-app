@@ -425,6 +425,7 @@ class App extends Component {
             <meta charSet="utf-8" />
             <title>Emolings</title>
             <meta name='description' content='Modern day child feelings chart with a unique spin on parent/caregiver coping skills.'/>
+            <meta name="viewport" content= "width=device-width, user-scalable=no"></meta>
         </Helmet>
         <EmolingsContext.Provider value={ contextValue }>
           <Nav />
