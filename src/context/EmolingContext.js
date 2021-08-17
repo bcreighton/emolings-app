@@ -16,7 +16,9 @@ const EmolingsContext = React.createContext({
     current_severity: {},
     getFeelings: () => {},
     getAdvFeelings: () => {},
+    resetAdvFeelings: () => {},
     getCopingSkills: () => {},
+    resetCopingSkills: () => {},
     getReminders: () => {},
     setUserType: () => {},
     setTrackLocation: () => {}

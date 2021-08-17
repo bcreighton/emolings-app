@@ -133,7 +133,6 @@ class App extends Component {
   }
 
   setAdvFeelings = adv_feelings => {
-    this.resetAdvFeelings()
     return this.setState({
       adv_feelings,
       error: null,
@@ -231,7 +230,6 @@ class App extends Component {
   }
 
   setCopingSkills = coping_skills => {
-    this.resetCopingSkills()
     return this.setState({
       coping_skills,
       error: null,
@@ -413,8 +411,10 @@ class App extends Component {
       getFeeling: this.getFeeling,
       getAdvFeeling: this.getAdvFeeling,
       getAdvFeelings: this.getAdvFeelings,
+      resetAdvFeelings: this.resetAdvFeelings,
       getSeverity: this.getSeverity,
       getCopingSkills: this.getCopingSkills,
+      resetCopingSkills: this.resetCopingSkills,
       setUserType: this.setUserType,
       setTrackLocation: this.setTrackLocation,
     }

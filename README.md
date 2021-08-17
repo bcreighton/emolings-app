@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# EMOLINGS
+Targeted Real Estate Agent recruiting simplified! This pilot application is a the foundation of a larger vision behind the requirements of effective recruting in the Real Estate Brokerage business. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo is the front-end client, built in React.  You can see the app live at [https://247recruit-app.vercel.app/](https://247recruit-app.vercel.app/)
 
-## Available Scripts
+This application does not require login and registration. However, below are instructions on the best way to demo the application.
 
-In the project directory, you can run:
+#### Instructions
 
-### `npm start`
+1. Click "Get Started" (no registration or login required)
+2. Search for an agent or a wildcard term ie: Veronica, Duane, R, El
+3. Select the agent you want see more details about.
+4. Create a note using the form
+5. Explore the rest of the app...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Introduction
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Recruiting the Real Estate Brokerage business is a physical sport; has has only increased in competition over the last 5 - 10 years. in today's fast paced environment it's extremely difficult to get the attention of valuable, producing, and profitable agents in any marketplace. 24/7 REcruit looks to solve this by linking MLS, liscensing, KPIs for potential movement, and tips and tricks developed from years of Real Estate Broker coaching; 24/7 REcruit is meant to speed up the recruiting process by helping Brokers and Recruits to get to "no" quicker, so they can focus on the yeses in the marketplace.
 
-### `npm test`
+#### Disclaimer: This is a demo/pilot application and does not use real world real estate agent data, MLS data, and/or state licensing data. Transactions and Volume numbers will not always equate to real world numbers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Quick App Demo
 
-### `npm run build`
+![Imgur](https://i.imgur.com/IQiICxJ.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Front End
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React
+  * Create React App
+  * React Router
+* HTML5
+* CSS (no frameworks)
 
-### `npm run eject`
+#### Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Jest
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Deployed via Vercel
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+Run `npm install` to load dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run `npm test` to ensure a stable build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is only the front end client, you'll need the backend server to have a fully functional application.
 
-### Code Splitting
+To get the backend up and running see [https://github.com/bcreighton/247recruit-api](https://github.com/bcreighton/247recruit-api)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployments are handled through Vercel and can be run via `npm run deploy`

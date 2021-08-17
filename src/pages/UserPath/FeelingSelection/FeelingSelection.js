@@ -58,6 +58,10 @@ class FeelingSelection extends Component {
             ? this.context.setUserType('child')
             : this.context.setUserType('parent-caregiver')
     }
+
+    componentWillUnmount() {
+        this.context.resetAdvFeelings();
+    }
     
     render() {
         return (
