@@ -35,6 +35,9 @@
     box-sizing: border-box;
     color: var(--main-default-copy-color);
 }
+body {
+    background-color: #f4fafc;
+}
 
 .App {
     display: grid;
@@ -86,6 +89,7 @@ main div {
     padding-left: 40px;
     font-weight: bolder;
     font-size: var(--copy-standout-size);
+    text-transform: capitalize;
 }
 
 .emphasized {
@@ -93,18 +97,24 @@ main div {
 }
 .container.user-selection {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: minmax(132px,325px) minmax(132px,325px);
     grid-template-rows: auto auto 1fr;
+    justify-content: center;
 }
 
 .container.options {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: minmax(132px,325px) minmax(132px,325px);
     grid-auto-rows: auto;
+    justify-content: center;
+}
+
+#adv-feeling-selection .container.options {
+    grid-template-columns: minmax(115px,325px) minmax(115px,325px) minmax(115px,325px);
 }
 
 #feeling-severity .container.options {
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns:  minmax(115px,325px) minmax(115px,325px) minmax(115px,325px);
 }
 
 .user-selection h2 {
@@ -141,9 +151,6 @@ footer.container {
         padding: 0 10%;
     }
 
-    #adv-feeling-selection .container.options {
-        grid-template-columns: 33.33% 33.33% 33.33%;
-    }
 }
 
 @media screen and (min-width: 750px) {

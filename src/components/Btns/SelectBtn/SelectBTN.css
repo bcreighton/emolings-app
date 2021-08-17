@@ -4,3 +4,35 @@
     text-transform: uppercase;
     color: white;
 }
+
+/* Responsive Mobile Styling */
+
+@media screen and (max-width: 480px) {
+    .select-btn {
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (min-width: 675px) {
+    
+}
+
+@media screen and (min-width: 750px) {
+
+}
+
+@media screen and (min-width: 1015px) {
+    
+}
+
+@media screen and (min-width: 1225px) {
+    
+}
+
+@media screen and (min-width: 1360px) {
+
+}
+
+@media screen and (min-width: 1500px) {
+    
+}

@@ -1,4 +1,6 @@
 .btn-link {
+    display: block;
+    position: relative;
     width: var(--btn-select-width);
     text-decoration: none;
 }
@@ -6,8 +8,14 @@
 .btn-link:after {
     content: '';
     display: block;
-    padding-bottom: 100%;
+    padding-top: 100%;
     pointer-events: none;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .user-btn, .select-btn {

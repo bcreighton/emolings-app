@@ -27,7 +27,7 @@ class SelectBtn extends Component {
     }
 
     generateClass = () => {
-        return ('select-btn ' + this.props.color + '-btn');
+        return ('select-btn content ' + this.props.color + '-btn');
     }
 
     render() {
