@@ -1,27 +1,22 @@
 # EMOLINGS
-Targeted Real Estate Agent recruiting simplified! This pilot application is a the foundation of a larger vision behind the requirements of effective recruting in the Real Estate Brokerage business. 
+The modern age version of a feelings chart for Parents/Caregivers to create better conversations with children about the feelings and emotions they experience on a daily basis.
 
-This repo is the front-end client, built in React.  You can see the app live at [https://247recruit-app.vercel.app/](https://247recruit-app.vercel.app/)
-
-This application does not require login and registration. However, below are instructions on the best way to demo the application.
-
-#### Instructions
-
-1. Click "Get Started" (no registration or login required)
-2. Search for an agent or a wildcard term ie: Veronica, Duane, R, El
-3. Select the agent you want see more details about.
-4. Create a note using the form
-5. Explore the rest of the app...
+This repo is the front-end client, built in React.  You can see the app live at [https://emolings-app.vercel.app/](https://emolings-app.vercel.app/)
 
 ## Introduction
 
-Recruiting the Real Estate Brokerage business is a physical sport; has has only increased in competition over the last 5 - 10 years. in today's fast paced environment it's extremely difficult to get the attention of valuable, producing, and profitable agents in any marketplace. 24/7 REcruit looks to solve this by linking MLS, liscensing, KPIs for potential movement, and tips and tricks developed from years of Real Estate Broker coaching; 24/7 REcruit is meant to speed up the recruiting process by helping Brokers and Recruits to get to "no" quicker, so they can focus on the yeses in the marketplace.
+Feeling charts are a thing of the past; unfortuantely, they're limited as they're static and although their purpose and intent of feeling identification is decent it doesn't solve the root of the problem. CONVERSATION & COPING SKILLS!
 
-#### Disclaimer: This is a demo/pilot application and does not use real world real estate agent data, MLS data, and/or state licensing data. Transactions and Volume numbers will not always equate to real world numbers.
+Emolings is a modern age version of a feelings chart!!
+
+Not only does Emolings provide emotion and feeling identification, both from the Parent/Caregiver and Child perspective; but Emolings also provides the next steps which are the most essential.
+* Create open communication between Parent/Guardian and Child
+* Provide suggestions to help Parent/Guardian guide their Child to identify and express their emotions and feelings
+* Present proven coping mechanisms to acknowledge and move through their emotions and feelings in a possitive manner
 
 ## Quick App Demo
 
-![Imgur](https://i.imgur.com/IQiICxJ.gif)
+![Imgur](https://i.imgur.com/O8m5A8w.gif)
 
 ## Technology
 
@@ -49,6 +44,6 @@ Run `npm test` to ensure a stable build
 
 This is only the front end client, you'll need the backend server to have a fully functional application.
 
-To get the backend up and running see [https://github.com/bcreighton/247recruit-api](https://github.com/bcreighton/247recruit-api)
+To get the backend up and running see [https://github.com/bcreighton/emolings-api](https://github.com/bcreighton/emolings-api)
 
 Deployments are handled through Vercel and can be run via `npm run deploy`
