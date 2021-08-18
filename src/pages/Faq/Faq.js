@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmolingsContext from '../../context/EmolingContext';
+import EmolingsContext from '../../context/EmolingsContext';
 import './Faq.css';
 
 class Faq extends Component {
@@ -16,7 +16,7 @@ class Faq extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
     }
 
     render() {

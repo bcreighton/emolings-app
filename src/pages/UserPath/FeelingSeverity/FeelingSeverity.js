@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import SelectBtn from '../../../components/Btns/SelectBtn/SelectBtn';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
-import EmolingsContext from '../../../context/EmolingContext';
+import EmolingsContext from '../../../context/EmolingsContext';
 
 class FeelingSeverity extends Component {
     static contextType = EmolingsContext;
@@ -52,7 +52,7 @@ class FeelingSeverity extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
         (!this.props.location.pathname.includes('/child-feeling-severity'))
             && this.context.getAdvFeeling(parseInt(this.props.match.params.advFeelingId))
         this.context.setTrackLocation(this.props.location.pathname);

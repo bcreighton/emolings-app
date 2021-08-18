@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import SelectBtn from '../../../components/Btns/SelectBtn/SelectBtn';
-import EmolingsContext from '../../../context/EmolingContext';
+import EmolingsContext from '../../../context/EmolingsContext';
 
 class AdvFeelingSelection extends Component {
     static contextType = EmolingsContext;
+    static defaultProps = { match: {params:{ feelingId: '1'}}}
 
     generateAdvFeelingList(adv_feelings) {
         return adv_feelings.map(adv_feeling => (
@@ -17,7 +18,7 @@ class AdvFeelingSelection extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
         this.context.getFeeling(parseInt(this.props.match.params.feelingId))
         this.context.getAdvFeelings(parseInt(this.props.match.params.feelingId))
     }

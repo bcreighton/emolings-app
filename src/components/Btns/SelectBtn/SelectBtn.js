@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './SelectBtn.css';
 import '../Btns.css';
-import EmolingsContext from '../../../context/EmolingContext';
+import EmolingsContext from '../../../context/EmolingsContext';
 
 class SelectBtn extends Component {
     static contextType = EmolingsContext;

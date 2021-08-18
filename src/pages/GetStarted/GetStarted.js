@@ -5,7 +5,7 @@ import './GetStarted.css';
 class GetStarted extends Component {
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
     }
     
     render() {

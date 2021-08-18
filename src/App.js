@@ -5,7 +5,6 @@ import {Helmet} from "react-helmet";
 import EmolingsApiService from './services/emolings-api-service';
 
 // Context and Components
-import EmolingsContext from './context/EmolingContext';
 import Nav from './components/Nav/Nav';
 import Landing from './pages/Landing/Landing';
 import GetStarted from './pages/GetStarted/GetStarted';
@@ -23,6 +22,10 @@ import Footer from './components/Footer/Footer';
 // Stylesheets
 import './App.css';
 import './reset.css';
+
+// Utilities
+import EmolingsContext from './context/EmolingsContext';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 class App extends Component {
   state = {
@@ -420,36 +423,38 @@ class App extends Component {
     }
 
     return (
-      <div className='App'>
-        <Helmet>
-            <meta charSet="utf-8" />
-            <title>Emolings</title>
-            <meta name='description' content='Modern day child feelings chart with a unique spin on parent/caregiver coping skills.'/>
-            <meta name="viewport" content= "width=device-width, user-scalable=no"></meta>
-        </Helmet>
-        <EmolingsContext.Provider value={ contextValue }>
-          <Nav />
-          <main>
-            <Switch>
-              <Route path='/get-started' component={GetStarted} />
-              <Route path='/faq' component={Faq} />
-              <Route path='/coping-skills' component={CopingSkills} />
-              <Route path='/feeling-selection' component={FeelingSelection} />
-              <Route path='/child-feeling-selection' component={FeelingSelection} />
-              <Route path='/feeling-identification' component={FeelingIdentification} />
-              <Route path='/adv-feeling-selection/:feelingId' component={AdvFeelingSelection} />
-              <Route path='/child-feeling-severity/:feelingId' component={FeelingSeverity} />
-              <Route path='/feeling-severity/:advFeelingId' component={FeelingSeverity} />
-              <Route path='/severity-identification' component={SeverityIdentification} />
-              <Route path='/child-coping/:severityId' component={Coping} />
-              <Route path='/coping/:severityId' component={Coping} />
-              <Route path='/' exact component={Landing} />
-              <Route component={PageNotFound} />
-            </Switch>
-          </main>
-          <Footer />
-        </EmolingsContext.Provider>
-      </div>
+      <ScrollToTop>
+        <div className='App'>
+          <Helmet>
+              <meta charSet="utf-8" />
+              <title>Emolings</title>
+              <meta name='description' content='Modern day child feelings chart with a unique spin on parent/caregiver coping skills.'/>
+              <meta name="viewport" content= "width=device-width, user-scalable=no"></meta>
+          </Helmet>
+          <EmolingsContext.Provider value={ contextValue }>
+            <Nav />
+            <main>
+              <Switch>
+                <Route path='/get-started' component={GetStarted} />
+                <Route path='/faq' component={Faq} />
+                <Route path='/coping-skills' component={CopingSkills} />
+                <Route path='/feeling-selection' component={FeelingSelection} />
+                <Route path='/child-feeling-selection' component={FeelingSelection} />
+                <Route path='/feeling-identification' component={FeelingIdentification} />
+                <Route path='/adv-feeling-selection/:feelingId' component={AdvFeelingSelection} />
+                <Route path='/child-feeling-severity/:feelingId' component={FeelingSeverity} />
+                <Route path='/feeling-severity/:advFeelingId' component={FeelingSeverity} />
+                <Route path='/severity-identification' component={SeverityIdentification} />
+                <Route path='/child-coping/:severityId' component={Coping} />
+                <Route path='/coping/:severityId' component={Coping} />
+                <Route path='/' exact component={Landing} />
+                <Route component={PageNotFound} />
+              </Switch>
+            </main>
+            <Footer />
+          </EmolingsContext.Provider>
+        </div>
+      </ScrollToTop>
     );
   }
 }

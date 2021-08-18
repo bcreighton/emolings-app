@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
-import EmolingsContext from '../../../context/EmolingContext';
+import EmolingsContext from '../../../context/EmolingsContext';
 import './Coping.css';
 
 class Coping extends Component {
@@ -73,7 +73,7 @@ class Coping extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
         this.context.getCopingSkills(this.context.current_feeling.id)
         this.context.getSeverity(parseInt(this.props.match.params.severityId));
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import SelectBtn from '../../../components/Btns/SelectBtn/SelectBtn';
 import StandardBtn from '../../../components/Btns/StandardBtn/StandardBtn';
-import EmolingsContext from '../../../context/EmolingContext';
+import EmolingsContext from '../../../context/EmolingsContext';
 import './FeelingSelection.css';
 
 class FeelingSelection extends Component {
@@ -53,7 +53,7 @@ class FeelingSelection extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
         (this.props.location.pathname === '/child-feeling-selection')
             ? this.context.setUserType('child')
             : this.context.setUserType('parent-caregiver')

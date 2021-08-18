@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmolingsContext from '../../context/EmolingContext';
+import EmolingsContext from '../../context/EmolingsContext';
 import './CopingSkills.css';
 
 class CopingSkills extends Component {
@@ -14,7 +14,7 @@ class CopingSkills extends Component {
     }
     
     componentDidMount() {
-        window.scrollTo(0, 0);
+        
     }
 
     render() {
