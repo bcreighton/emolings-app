@@ -7,14 +7,22 @@
 
 /* Responsive Mobile Styling */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 415px) {
+    .select-btn {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 416px) {
     .select-btn {
         font-size: 1.15rem;
     }
 }
 
-@media screen and (min-width: 675px) {
-    
+@media screen and (min-width: 520px) {
+    .select-btn {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 750px) {
